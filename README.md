@@ -1,0 +1,1 @@
+# macos-same-window-switcher
