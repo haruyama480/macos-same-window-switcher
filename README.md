@@ -45,15 +45,15 @@ ANSI US physical grave is `0x32`. Copy-pasteable snippet: [docs/skhdrc.example](
 ```
 # ANSI US grave. Confirm with: skhd --observe
 # Disable OS "Move focus to next window" first.
-cmd - \` : $HOME/.local/bin/same-window-switcher next
-cmd + shift - \` : $HOME/.local/bin/same-window-switcher prev
+cmd - ` : $HOME/.local/bin/same-window-switcher next
+cmd + shift - ` : $HOME/.local/bin/same-window-switcher prev
 ```
 
 After `make install-app`, point at the bundle binary instead:
 
 ```
-cmd - \` : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher next
-cmd + shift - \` : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher prev
+cmd - ` : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher next
+cmd + shift - ` : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher prev
 ```
 
 **JIS and other layouts:** run `skhd --observe` and bind the keycode you see. Do not guess. This project does not publish a JIS keycode.
