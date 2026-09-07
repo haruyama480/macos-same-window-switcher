@@ -45,20 +45,18 @@ ANSI US physical grave is `0x32`. Copy-pasteable snippet: [docs/skhdrc.example](
 ```
 # ANSI US grave. Confirm with: skhd --observe
 # Disable OS "Move focus to next window" first.
-cmd - 0x32 : $HOME/.local/bin/same-window-switcher next
-cmd + shift - 0x32 : $HOME/.local/bin/same-window-switcher prev
+cmd - \` : $HOME/.local/bin/same-window-switcher next
+cmd + shift - \` : $HOME/.local/bin/same-window-switcher prev
 ```
 
 After `make install-app`, point at the bundle binary instead:
 
 ```
-cmd - 0x32 : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher next
-cmd + shift - 0x32 : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher prev
+cmd - \` : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher next
+cmd + shift - \` : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher prev
 ```
 
 **JIS and other layouts:** run `skhd --observe` and bind the keycode you see. Do not guess. This project does not publish a JIS keycode.
-
-AeroSpace `cmd-grave` is a layout name and **may not be the same physical key** as skhd `0x32`. Confirm on your keyboard.
 
 Key-repeat is serialized by flock: overlapping `next`/`prev` **wait** rather than skip. Wait is OK.
 
