@@ -1,0 +1,25 @@
+# build output
+bin/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+coverage.out
+coverage.html
+vendor/
+
+# macOS
+.DS_Store
+*.app
+*.dSYM/
+
+# editors
+*.swp
+*~
+.idea/
+.vscode/

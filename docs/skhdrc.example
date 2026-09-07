@@ -1,0 +1,28 @@
+# ~/.skhdrc snippet for same-window-switcher (ANSI US)
+#
+# One-shot CLI: the binary has no hotkeys. skhd launches next/prev.
+#
+# Use keycodes, not a literal grave/backtick — skhd's parser breaks on it.
+# ANSI US physical grave is 0x32. Confirm with: skhd --observe
+#
+# JIS and other layouts: run `skhd --observe` and bind the keycode you see.
+# Do not guess. This file does not publish a JIS keycode.
+#
+# Disable System Settings → Keyboard → Keyboard Shortcuts → Keyboard →
+# "Move focus to next window" first, or the OS will steal the chord.
+#
+# Absolute path required. skhd's PATH is not your login shell.
+# Primary install:  make install      → $HOME/.local/bin/same-window-switcher
+# Fallback (Tahoe): make install-app  → $HOME/Applications/SameWindowSwitcher.app
+#   then point at Contents/MacOS/same-window-switcher
+#
+# AeroSpace cmd-grave may not be the same physical key as skhd 0x32.
+# Grant Accessibility to THIS binary (or the .app), not skhd.
+# Key-repeat is serialized by flock; wait is OK.
+
+cmd - 0x32 : $HOME/.local/bin/same-window-switcher next
+cmd + shift - 0x32 : $HOME/.local/bin/same-window-switcher prev
+
+# After make install-app, use the bundle binary instead:
+# cmd - 0x32 : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher next
+# cmd + shift - 0x32 : $HOME/Applications/SameWindowSwitcher.app/Contents/MacOS/same-window-switcher prev

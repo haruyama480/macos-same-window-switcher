@@ -1,0 +1,20 @@
+[cycle]
+policy = "spatial"          # spatial | window-id | z-order | mru
+sticky_ms = 2000
+wrap = true
+on_membership_change = "merge"  # merge | rebuild
+
+[filter]
+include_minimized = false
+include_dialogs = false
+include_floating = false
+
+[focus]
+raise = true
+set_main = true
+ax_timeout_ms = 250
+raise_retry = 1
+unminimize = false
+
+[state]
+dir = ""
